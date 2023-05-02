@@ -1,0 +1,531 @@
+/*
+  |========================
+  | Basic settings 
+  |========================
+*/
+
+:root {
+  /* Colors */
+  --primary-brand: #4d5ae5; /*Iris clr*/ /*CTAs focused/active states, links*/
+  --pressed-state: #404bbf; /*Ocean clr*/ /*CTAs*/
+  --grey-bg: #2e2f42; /*Navy Blue clr*/ /*overlays, shadows, headings*/ /*Hero image background*/
+  --valid-clr: #31d0aa; /*Green clr*/ /*Valid fields, Success messages*/
+  --text-clr: #434455;
+  --color-light-slate: #8e8f99; /*Helper text, Deemphasized text*/
+  --color-cornflower: #e7e9fc; /*Accent color, Hairlines, Subtle backgrounds*/
+  --color-cloud: #f4f4fd; /*Light mode backgrounds, Light mode Dialogs/alerts*/
+  /* Fonts */
+  --primary-font: 'Roboto', sans-serif;
+  --secondary-font: 'Raleway', sans-serif;
+  /* Backgrounds */
+  --white-bg: #ffffff; /*White*/ /*Header, team card background*/
+  --dairy-bg: #fcfcfc; /*Dairy*/ /*Modal background*/
+    /* Shadow */
+  --header-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  --btn-order-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  --team-card-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  --filter-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  --project-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  --bg-gradient: rgba(46, 47, 66, 0.7);
+}
+
+/* Reset */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--grey-bg);
+}
+
+.section-title {
+  margin-bottom: 72px;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--grey-bg);
+}
+
+body {
+  font-family: var(--primary-font);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--text-clr);
+  background-color: var(--white-bg);
+}
+
+.container {
+  max-width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.features-list,
+.list-overview,
+.team-list,
+.socials-list,
+.portfolio-btn-list,
+.customers-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.contacts-list,
+.nav-list {
+  display: flex;
+  gap: 40px;
+}
+
+.list-overview-img,
+.team-img,
+.projects-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+  |============================
+  | Header Section
+  |============================
+*/
+
+.header {
+  border-bottom: 1px solid var(--color-cornflower);
+  box-shadow: var(--header-shadow);
+}
+
+.header-container,
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--secondary-font);
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-brand);
+}
+
+.header-logo {
+  margin-right: 76px;
+}
+
+.logo-studio {
+  color: var(--grey-bg);
+}
+.nav-link {
+  display: block;
+  padding: 24px 0;
+
+  font-weight: 500;
+  color: var(--grey-bg);
+}
+
+.contacts {
+  margin-left: auto;
+
+  font-style: normal;
+}
+.contacts-item-link {
+  display: block;
+  padding: 24px 0;
+  color: inherit;
+}
+.nav-link:hover,
+.nav-link:focus,
+.contacts-item-link:hover,
+.contacts-item-link:focus {
+  color: var(--pressed-state);
+}
+
+/**
+  |============================
+  | Hero Section
+  |============================
+*/
+
+.hero {
+  background-color: var(--grey-bg);
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(var(--bg-gradient), var(--bg-gradient)),
+    url('../images/hero-section/people-office.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-title {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 48px;
+  max-width: 496px;
+  font-size: 56px;
+  line-height: 1.07;
+  letter-spacing: 0.02em;
+  color: var(--white-bg);
+}
+
+.btn-order {
+  display: block;
+  min-width: 169px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px 32px;
+  box-shadow: var(--btn-order-shadow);
+  border-radius: 4px;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  color: var(--white-bg);
+  background-color: var(--primary-brand);
+}
+
+.hero.section {
+  padding-top: 188px;
+  padding-bottom: 188px;
+}
+.btn-order:hover,
+.btn-order:focus {
+  background-color: var(--pressed-state);
+}
+
+/**
+  |============================
+  | Features Section
+  |============================
+*/
+
+.features-list-item {
+  width: calc((100%-72px) / 4);
+}
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 112px;
+  margin-bottom: 8px;
+  background: var(--color-cloud);
+  border-radius: 4px;
+}
+
+.features-icon {
+  object-fit: cover;
+}
+.features-list-title {
+  margin-bottom: 8px;
+}
+
+/**
+  |============================
+  | Team Section
+  |============================
+*/
+
+.overview-section.section {
+  padding-top: 0;
+}
+.list-overview-item {
+  width: calc((100%-48px) / 3);
+  border: 1px solid var(--color-cornflower);
+}
+
+/**
+  |============================
+  | Team Section
+  |============================
+*/
+
+.team-section {
+  background-color: var(--color-cloud);
+}
+.team-list-item {
+  width: calc((100%-72px) / 4);
+  box-shadow: var(--team-card-shadow);
+  border-radius: 0px 0px 4px 4px;
+  background-color: var(--white-bg);
+}
+.team-item-container {
+  padding: 32px 0;
+  text-align: center;
+  border-radius: 0px 0px 4px 4px;
+}
+.employee-title,
+.employee-subtitle {
+  margin-bottom: 8px;
+}
+.socials-item {
+  width: 40px;
+  height: 40px;
+}
+.socials-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-brand);
+  color: var(--color-cloud);
+  border-radius: 50%;
+}
+.socials-link:hover,
+.socials-link:focus {
+  background-color: var(--pressed-state);
+}
+.socials-icon {
+  fill: currentColor;
+  object-fit: cover;
+}
+
+/**
+  |============================
+  | Customers
+  |============================
+*/
+
+.customers-title {
+  line-height: 1.1;
+}
+.customers-list-item {
+  width: calc((100%-24px * 5) / 6);
+  height: 88px;
+}
+.customers-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: var(--color-light-slate);
+  border: 1px solid var(--color-light-slate);
+  border-radius: 4px;
+}
+
+.customers-list-link:hover,
+.customers-list-link:focus {
+  color: var(--pressed-state);
+  border-color: var(--pressed-state);
+}
+
+.customers-icon {
+  fill: currentColor;
+  object-fit: cover;
+}
+
+/* Footer */
+
+.footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: var(--grey-bg);
+  color: var(--color-cloud);
+}
+
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.studio-footer {
+  color: var(--color-cloud);
+}
+
+.logo-footer {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.footer-subtitle {
+  max-width: 264px;
+}
+
+.footer-thumb-position {
+  margin-right: 120px;
+}
+
+.social-media-title {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--white-bg);
+}
+
+.socials-footer-list {
+  display: flex;
+  gap: 16px;
+}
+.socials-footer-item  {
+  width: 40px;
+  height: 40px;
+}
+.socials-footer-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-brand);
+  color: var(--color-cloud);
+  border-radius: 50%;
+}
+.socials-footer-link:hover,
+.socials-footer-link:focus {
+  background-color: var(--valid-clr);
+}
+.socials-footer-icon {
+  fill: currentColor;
+  object-fit: cover;
+}
+
+/* --------------------------------
+   Portfolio
+   -------------------------------- */
+
+.portfolio-section.section {
+  padding-top: 96px;
+}
+
+/* Filter */
+
+.btn-filter {
+  padding: 12px 24px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  color: var(--primary-brand);
+  background: var(--color-cloud);
+  border: 1px solid var(--color-cornflower);
+  border-radius: 4px;
+}
+
+.btn-filter:hover,
+.btn-filter:focus {
+  color: var(--white-bg);
+  background-color: var(--pressed-state);
+  border: 1px solid transparent;
+  box-shadow: var(--filter-shadow);
+}
+
+.portfolio-btn-list {
+  margin-bottom: 72px;
+  justify-content: center;
+}
+
+/* Projects */
+
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 48px;
+}
+.projects-list-item {
+  max-width: calc((100%-48px) / 3);
+}
+.projects-link {
+  display: block;
+}
+.projects-link:hover,
+.projects-link:focus {
+  box-shadow: var(--project-shadow);
+}
+.projects-card {
+  padding: 32px 16px;
+  border: 1px solid var(--color-cornflower);
+  border-top: none;
+}
+.project-title {
+  margin-bottom: 8px;
+}
+
+.project-subtitle {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--text-clr);
+}
+
+
+/**
+    |!!!==PRACTICE ZONE==!!!
+    | Роблю експеріменти з градієнтом
+    |!!!==PRACTICE ZONE==!!!
+  */
+
+.overview-title {
+  /* border: 20px dashed #fd1d1d;
+  padding: 20px;
+  background-clip: border-box;
+  background-clip: padding-box; 
+  background-clip: content-box; 
+  background-clip: text;
+  background-color: #833ab4;
+  background-image: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  -webkit-background-clip: text;
+  /color: transparent; */
+}
