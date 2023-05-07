@@ -158,7 +158,7 @@ body {
   display: flex;
   align-items: center;
 
-  position: relative; /* HERE */
+  
 }
 
 .logo {
@@ -173,6 +173,9 @@ body {
 
 .header-logo {
   margin-right: 76px;
+  position: relative; /* HERE */
+  color: #404bbf; /* HERE */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); /* HERE */
 }
 
 .logo-studio {
@@ -188,11 +191,12 @@ body {
   padding: 24px 0;
   font-weight: 500;
   color: var(--grey-bg);
-
+/* 
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0ms;
+  transition-delay: 0ms; */
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link::after {
@@ -289,7 +293,8 @@ body {
 
 .btn-order:hover,
 .btn-order:focus {
-  background-color: var(--pressed-state);
+  background-color: #404bbf; 
+  border: none;
 }
 
 .hero.section {
@@ -412,11 +417,11 @@ body {
   border: 1px solid var(--color-light-slate);
   border-radius: 4px;
 
-  /* transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);  */
-  transition-property: border-color background-color;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+  /* transition-property: border-color background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0ms;
+  transition-delay: 0ms; */
 }
 
 .customers-list-link:hover,
@@ -737,7 +742,11 @@ pointer-events: none;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
-.modal-close-btn:hover 
+.modal-close-btn:hover {
+  background-color: #404bbf; 
+  border: none;
+}
+
 .modal-close-btn:focus {
   background-color: #404bbf;
   border: none; 
