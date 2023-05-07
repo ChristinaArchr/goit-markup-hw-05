@@ -26,10 +26,12 @@
     <header class="header">
       <div class="header-container container">
         <nav class="header-nav">
-          <a class="logo header-logo link" href="./index.html">Web<span class="logo-studio">Studio</span></a>
+          <a class="logo header-logo link" href="./index.html"
+            >Web<span class="logo-studio">Studio</span></a
+          >
           <ul class="nav-list list">
             <li class="nav-list-item">
-              <a class="nav-link link" href="./index.html">Studio</a>
+              <a class="nav-link link active" href="./index.html">Studio</a>
             </li>
             <li class="nav-list-item">
               <a class="nav-link link" href="./portfolio.html">Portfolio</a>
@@ -59,7 +61,7 @@
       <section class="hero section">
         <div class="hero-container container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button class="btn-order" type="button">Order Service</button>
+          <button class="btn-order" type="button" data-modal-open>Order Service</button>
         </div>
       </section>
       <!-- Features section -->
@@ -124,7 +126,8 @@
           <h2 class="overview-title section-title">What are we doing</h2>
           <ul class="list-overview list">
             <li class="list-overview-item">
-              <img class="list-overview-img"
+              <img
+                class="list-overview-img"
                 src="./images/what-are-we-doing/img-1.jpg"
                 alt="Data Analytics"
                 width="360"
@@ -132,7 +135,8 @@
               />
             </li>
             <li class="list-overview-item">
-              <img class="list-overview-img"
+              <img
+                class="list-overview-img"
                 src="./images/what-are-we-doing/img-2.jpg"
                 alt="Mobile Data"
                 width="360"
@@ -140,7 +144,8 @@
               />
             </li>
             <li class="list-overview-item">
-              <img class="list-overview-img"
+              <img
+                class="list-overview-img"
                 src="./images/what-are-we-doing/img-3.jpg"
                 alt="PC image"
                 width="360"
@@ -594,5 +599,16 @@
         </div>
       </div>
     </footer>
+    <!-- Modal Window -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-close-btn" data-modal-close>
+          <svg class="modal-close-icon" width="8" height="8">
+            <use href="./images/icons.svg#close-cross"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
