@@ -146,8 +146,9 @@ body {
 
 .header {
   z-index: var(--header-idx);
-  position: relative; /*here*/
-
+  /* position: fixed;
+  width: 100%;
+  top: 0; */
   border-bottom: 1px solid var(--color-cornflower);
   box-shadow: var(--header-shadow);
 }
@@ -156,6 +157,8 @@ body {
 .header-nav {
   display: flex;
   align-items: center;
+
+  position: relative; /* HERE */
 }
 
 .logo {
@@ -205,7 +208,7 @@ body {
 }
 
 .nav-link.active::after {
-  background-color: var(--pressed-state);
+  background-color: #404bbf;;
 }
 
 .contacts {
@@ -227,7 +230,7 @@ body {
 .nav-link:focus,
 .contacts-item-link:hover,
 .contacts-item-link:focus {
-  color: var(--pressed-state);
+  color: #404bbf;;
 }
 
 /**
@@ -409,7 +412,8 @@ body {
   border: 1px solid var(--color-light-slate);
   border-radius: 4px;
 
-  transition-property: background-color, border-color;
+  /* transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);  */
+  transition-property: border-color background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0ms;
@@ -531,10 +535,12 @@ body {
   border: 1px solid var(--color-cornflower);
   border-radius: 4px;
 
-  transition-property: color, background-color, border, box-shadow;
+  /* transition-property: color, background-color, border, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0ms;
+  transition-delay: 0ms; */
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-filter:hover,
@@ -607,12 +613,29 @@ body {
   transition: transform var(--anim-main);
 }
 
-.projects-list-item:hover .overlay {
+.projects-list-item:hover .overlay 
+.projects-list-item:focus .overlay {
   transform: translateY(0%);
 }
 
+/* .projects-link:hover .overlay 
+.projects-link:focus .overlay {
+  transform: translateY(0%);
+} */
+
 .overlay-text {
+  position: absolute;
+  top: 0; 
+  font-size: 16px; 
+  line-height: 1.5; 
   color: var(--color-cloud);
+  letter-spacing: 0.02em; 
+  padding: 40px 32px; 
+  background-color: #4d5ae5;
+  height: 100%;
+  width: 100%; 
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .projects-card {
@@ -669,14 +692,14 @@ pointer-events: none;
   transform: translateX(-50%) translateY(-50%);
 
   width: 408px;
-  height: 576px;
+  min-height: 576px;
   
   background-color: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
-  transition: opacity var(--anim-main), transform var(--anim-main);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .backdrop.is-hidden .modal {
@@ -694,10 +717,13 @@ pointer-events: none;
   justify-content: center;
   padding: 0;
 
-  margin-top: 24px;
+  top: 24px;
+  right: 24px;
+
+  /* margin-top: 24px;
   margin-right: 24px;
   margin-bottom: 528px;
-  margin-left: 360px;
+  margin-left: 360px; */
 
   height: 24px;
   width: 24px;
@@ -705,11 +731,27 @@ pointer-events: none;
 
   background-color: var(--color-cornflower);
   border: 1px solid rgba(0, 0, 0, 0.1);
+
+  cursor: pointer; 
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+.modal-close-btn:hover 
+.modal-close-btn:focus {
+  background-color: #404bbf;
+  border: none; 
 }
 
 .modal-close-icon {
-  fill: var(--grey-bg);
+   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.modal-close-icon:hover
+.modal-close-icon:focus {
+  fill: var(--white-bg);
+}
+
 
 /**
     |!!!==PRACTICE ZONE==!!!
