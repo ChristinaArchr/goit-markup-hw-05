@@ -686,13 +686,18 @@ pointer-events: none;
 
 .modal-close-btn {
   position: absolute;
-  top: -12px;
-  right: -12px;
+  /* top: -12px;
+  right: -12px; */
 
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
+
+  margin-top: 24px;
+  margin-right: 24px;
+  margin-bottom: 528px;
+  margin-left: 360px;
 
   height: 24px;
   width: 24px;
